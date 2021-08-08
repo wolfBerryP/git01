@@ -1,0 +1,47 @@
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+    <!--lang属性：HTML语言声明属性，用来定义当前文档显示的语言。
+     如：lang="en"表示定义语言为英文；lang="zh-CN"表示定义语言为中文。
+      其实对于文档显示来说怎样写都无所谓，定义成en的文档也可以显示中文，
+      定义成zh-CN的文档也可以显示英文。 但还是应该遵循标准，
+      毕竟这个属性对浏览器和搜索引擎还是有作用的。-->
+<head>
+<!--    <meta> 元素可提供有关某个 HTML 元素的元信息 (meta-information)，比如描述、针对搜索引擎的关键词以及刷新频率。-->
+<meta charset="utf-8">
+<title>Vue: 模板语法</title>
+
+</head>
+
+<body>
+
+<div id= "app">
+    <h2>1.双大括号表达式</h2>
+    <p>{{msg}}}</p>
+    <p>{{msg.toUpperCase()}}</p>
+
+    <h2>2.指令一：强制数据绑定</h2>
+    <a v-bind:href="url">访问指定站点</a>
+    <a :href="url">访问指定站点2</a>
+
+    <h2>3.指令二：绑定事件监听</h2>
+    <button v-on:click="handleClick">点击</button>
+    <button @click="handleClick">点击2</button>
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            msg: 'Vue官方文档',
+            url: 'https://cn.vuejs.org/'
+        },
+        methods: {
+            handleClick(){
+                alert('点击事件触发')
+            }
+        }
+    })
+</script>
+</body>
+
+</html>
