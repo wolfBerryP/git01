@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class和style绑定</title>
+    <style>
+        .aClass{
+            color : red;
+        }
+        .bClass{
+            color : blue;
+        }
+        .cClass{
+            font-size : 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="demo">
+    <h2>1. class绑定: :class='xxx'</h2>
+    <p :class="a" class="cClass">表达式是字符串</p>
+    <p :class="{aClass:isA, bClass:isB}">表达式是对象</p>
+    <p :class="['aClass', 'cClass']">表达式是数组</p>
+    <p :style="{color, fontSize}">style绑定</p>
+    <button @click="update">更新</button>
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+
+<script type="text/javascript">
+    new Vue({
+        el : '#demo',
+        data : {
+            a : 'aClass',
+            isA : true,
+            isB : false,
+            color : 'green',
+            fontSize : '50px'
+        },
+        methods:{
+            update(){
+                this.isA = false
+                this.isB = true
+                this.color = 'yellow'
+                this.fontSize = '30px'
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
