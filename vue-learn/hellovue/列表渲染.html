@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染</title>
+</head>
+<body>
+<div id="demo">
+  <h2>1.v-for 循环遍历数组</h2>
+  <ul>
+    <li v-for="(p, index) in persons" :key="index">
+      {{index}}---{{p.name}}---{{p.age}}
+      --- <button @click="deleteABC(index)">删除</button>
+      --- <button @click="updateABC(index,{name:'tomcat' , age:1000})">更新</button>
+    </li>
+  </ul>
+  <h2>2. v-for 循环遍历对象</h2>
+  <ul>
+    <li v-for="(value, key) in persons[0]" :key="key">
+      {{key}} --- {{value}}
+    </li>
+  </ul>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el : '#demo',
+    data : {
+      persons : [
+        {name: 'zhangsan', age:18},
+        {name: 'lisi', age:19},
+        {name: 'wangwu', age:20},
+        {name: 'zhaoliu', age:21}
+      ]
+    },
+    methods : {
+      deleteABC(index) {
+        this.persons.splice(index, 1);
+      },
+      updateABC(index,value){
+        this.persons.splice(index,1,value);
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
