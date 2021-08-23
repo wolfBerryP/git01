@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡&动画2</title>
+    <style>
+        .bounce-enter-active {
+            /*bounce-in为使用@keyframes定义的动画名*/
+            animation: bounce-in 1.5s;
+        }
+        .bounce-leave-active {
+            /*reverse,动画结束时的效果为进入时的翻转*/
+            animation: bounce-in 1.5s reverse;
+        }
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+    <button @click="show=!show">toggle show</button>
+    <transition name="bounce">
+        <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+    </transition>
+
+    <br>
+    <br>
+
+    <button @click="show2=!show2">toggle show 2</button>
+    <br>
+    <transition name="bounce">
+        <!--不加inline-block属性 短文字将会弹到浏览器内效果不好-->
+        <p v-if="show2" style="display: inline-block">Lorem ipsum.</p>
+    </transition>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el: '#demo',
+        data: {
+            show: true,
+            show2: true
+        }
+    })
+</script>
+</body>
+</html>

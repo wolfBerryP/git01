@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡&动画</title>
+    <style>
+        .xiaofang-enter-active, .xiaofang-leave-active {
+            /*opacity css 透明度*/
+            transition: opacity 0.5s;
+        }
+        .xiaofang-enter, .xiaofang-leave-to {
+            opacity: 0;
+        }
+
+        .panpan-enter-active {
+            transition: all .3s;
+        }
+        .panpan-leave-active {
+            transition: all 2s ease;
+        }
+        .panpan-enter, .panpan-leave-to {
+            transform: translateX(20px);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="cartoon">
+    <button @click="isShow= !isShow">Toggle render</button>
+    <transition name="xiaofang">
+        <p v-if="isShow">hello</p>
+    </transition>
+</div>
+
+<div id="cartoon2">
+    <button @click="isShow= !isShow">Toggle render</button>
+    <transition name="panpan">
+        <p v-if="isShow">hello</p>
+    </transition>
+</div>
+
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el: '#cartoon',
+        data() {
+            return {
+                isShow: true
+            }
+        }
+    })
+
+    const vm2 = new Vue({
+        el: '#cartoon2',
+        data() {
+            return {
+                isShow: true
+            }
+        }
+    })
+</script>
+</body>
+</html>

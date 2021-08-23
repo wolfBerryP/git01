@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue的生命周期</title>
+</head>
+<body>
+<!--
+    1) 初始化显示
+     * beforeCreate()
+     * created()
+     * beforeMount()
+     * mounted()
+    2) 更新状态 this.xxx=val
+     * beforeUpdate()
+     * updated()
+    3) 销毁vue实例: vm.$destroy()
+     * beforeDestroy()
+     * deatroyed()
+-->
+<div id="life">
+    <button @click="destroyVue">销毁</button>
+    <p v-show="isShow">{{msg}}</p>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    const vm = new Vue({
+        el: '#life',
+        data: {
+            isShow: true,
+            msg: 'Vue : still alive'
+        },
+        //1.初始化
+        beforeCreate(){
+            console.log('beforeCreate()')
+        },
+
+        created(){
+            console.log('created()')
+        },
+
+        beforeMount(){
+            console.log('beforeMount()')
+        },
+
+        mounted() {  //初始化后立刻调用1次
+            console.log('mounted')
+            //使用匿名函数的方式，如果函数内部没有就从外部获取
+            this.intervalId = setInterval(() => {
+                console.log('---定时器---')
+                this.isShow = !this.isShow
+            }, 1000)
+        },
+
+        //2.改变属性，进入更新阶段，该阶段会调用0-n次
+        beforeUpdate(){
+            console.log('beforeUpdate()')
+        },
+
+        updated(){
+            console.log('updated')
+        },
+
+        //3.调用 vm.$destroy 进入销毁阶段
+
+        beforeDestroy() { //死亡之前调用1次
+            console.log('beforeDestory()')
+            clearInterval(this.intervalId)
+        },
+
+        destroyed(){
+            console.log('destroy()')
+        },
+
+        methods: {
+            destroyVue() {
+                vm.$destroy();
+            }
+        }
+    })
+</script>
+</body>
+</html>
