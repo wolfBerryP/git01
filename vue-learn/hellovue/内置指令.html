@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置指令</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--
+ 1.v-text : 更新元素的 textContent
+ 2.v-html : 更新元素的 innerHTML
+ 3.v-if : 如果为true,当前标签才会输出到页面
+ 4.v-else : 如果为false,当前标签才会输出到页面
+ 5.v-show : 通过控制display样式来控制显示、隐藏
+ 6.v-for : 遍历数组、对象
+ 7.v-on : 绑定事件监听，一般写为@
+ 8.v-bind : 强制绑定解析表达式，可以省略v-bind
+ 9.v-model : 双向数据绑定
+ 10.ref : 指定唯一标识，vue对象通过$refs属性来访问这个元素对象
+ 11.v-cloak : 防止闪现，与css 配合: [v-cloak]{display:none}
+-->
+<div id="demo">
+    <p v-text="url"></p>
+    <p v-html="url"></p>  <!--innerHTML会解析html标签-->
+    <img :src="imageSrc" :id="picId" width="300px" height="200px">
+    <p>
+        <span ref="message">bilibili.com</span>
+        <button @click="showMessage">弹出左侧文本</button>
+    </p>
+    <p v-cloak>{{url}}</p>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    alert('模拟加载慢')
+    new Vue({
+        el: '#demo',
+        data: {
+            url: '<a href="https://www.bilibili.com/">小破站</a>\n',
+            imageSrc: 'http://www.pp3.cn/uploads/20120713j/527.jpg',
+            picId: '01'
+        },
+        methods: {
+            showMessage(){
+                alert(this.$refs.message.textContent)
+            }
+        }
+    })
+</script>
+</body>
+</html>

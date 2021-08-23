@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插件使用</title>
+</head>
+<body>
+<div id="demo">
+    <p v-my-directive="msg"></p>
+</div>
+<script type="text/javascript" src="../../js/vue.js"></script>
+<script type="text/javascript" src="./myPlugin.js"></script>
+<script type="text/javascript">
+    Vue.use(MyPlugin)
+    var vm = new Vue({
+        el: '#demo',
+        data: {
+            msg: 'plugin'
+        }
+    })
+    //调用自定义的静态方法,直接使用类名Vue
+    Vue.myGlobalMethod();
+    //调用自定义的对象方法,使用对象的方法vm
+    vm.$myMethod();
+</script>
+</body>
+</html>

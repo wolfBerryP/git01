@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+<div id="demo">
+    <h2>显示格式化的日期时间</h2>
+    <p>当前时间为：{{date}}}</p>
+    <p>格式化-时间&日期：{{date | dateStr}}</p>
+    <p>格式化1-日期：{{date | dateStr('YYYY-MM-DD')}}</p>
+    <p>格式化2-时间：{{date | dateStr('HH:mm:ss')}}</p>
+    <p>格式化3-星期：{{date | dateStr('dddd')}}</p>
+    <p>格式化4-子午线：{{date | dateStr('A')}}</p>
+    <br>
+    <a href="http://momentjs.cn/docs/#/displaying/">格式官方文档</a>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.29.1/moment.js"></script>
+<script type="text/javascript">
+    Vue.filter('dateStr', function (val,format){
+        return moment(val).format(format || "YYYY-MM-DD HH:mm:ss")
+    })
+
+    new Vue({
+        el: '#demo',
+        data: {
+            date: new Date()
+        }
+    })
+</script>
+</body>
+</html>
