@@ -12,8 +12,8 @@
       </header>
     </div>
     <div class="container">
-      <Add/>
-      <List :comments="comments"/>
+      <Add :addComment="addComment"/>
+      <List :comments="comments" :deleteComment="deleteComment"/>
     </div>
   </div>
 </template>
@@ -39,6 +39,14 @@ export default {
           content: '我走中路'
         }
       ]
+    }
+  },
+  methods:{
+    addComment(comment){
+      this.comments.unshift(comment);
+    },
+    deleteComment(index){
+      this.comments.splice(index,1);
     }
   },
   components: {
