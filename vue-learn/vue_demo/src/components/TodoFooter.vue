@@ -2,38 +2,18 @@
   <div class="todo-footer">
     <label>
       <!-- checkbox,选中则传值true  -->
-      <input type="checkbox" v-model="isAllCheck"/>
+      <!--      <input type="checkbox" v-model="isAllCheck"/>-->
+      <slot name="checkAll"></slot>
     </label>
-    <span>
-          <span>已完成{{ computeSize }}</span> / 全部{{ todos.length }}
-        </span>
-    <button class="btn btn-danger" v-show="computeSize" @click="deleteCompleteTodos">清除已完成任务</button>
+    <!--          <span>已完成{{ computeSize }}/ 全部{{ todos.length }}</span>-->
+    <slot name="computeNum"></slot>
+    <!--    <button class="btn btn-danger" v-show="computeSize" @click="deleteCompleteTodos">清除已完成任务</button>-->
+    <slot name="deleteMission"></slot>
   </div>
 </template>
 
 <script>
-export default {
-  props: {
-    todos: Array,
-    deleteCompleteTodos: Function,
-    selectAllTodos: Function
-  },
-  computed: {
-    computeSize() {
-      return this.todos.reduce((pre, todo) => pre + (todo.complete ? 1 : 0), 0)
-    },
-
-    isAllCheck: {
-      get() {
-        return this.computeSize === this.todos.length && this.computeSize > 0
-      },
-      set(value) {
-        console.log('selectAllTodos val is ==》' + value)
-        this.selectAllTodos(value)
-      }
-    }
-  }
-}
+export default {}
 </script>
 
 <style>

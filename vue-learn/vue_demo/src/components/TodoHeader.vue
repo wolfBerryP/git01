@@ -7,7 +7,6 @@
 <script>
 export default {
   props: {
-    addTodos: Function
   },
   data(){
     return {
@@ -28,7 +27,7 @@ export default {
         complete: false
       }
       //3.将对象添加到todos数组
-      this.addTodos(todo)
+      this.$emit('addTodos', todo)
       //4.清除输入
       this.planName = ''
     }
