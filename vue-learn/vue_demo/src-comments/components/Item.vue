@@ -17,7 +17,7 @@ export default {
   },
   methods:{
     deleteItem(){
-      const {index,deleteComment}=this
+      const {index, deleteComment}=this
       const name = this.comment.name
       if(window.confirm('是否删除 '+name+' 的评论？')){
         deleteComment(index)
