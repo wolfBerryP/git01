@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import VueResource from 'vue-resource'
-
-//使用插件
-Vue.use(VueResource)
+import '../static/css/base.css'
 
 new Vue({
   el: '#app',
@@ -12,4 +9,3 @@ new Vue({
   },
   template: '<App/>'
 })
-
