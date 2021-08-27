@@ -16,7 +16,7 @@
 
 <script>
 import pubsub from 'pubsub-js'
-import axios from "axios";
+import axios from "axios"
 
 export default {
   data() {
