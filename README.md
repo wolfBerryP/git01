@@ -1,2 +1,2 @@
 # ice-learn
-1.ice的学习笔记
+ice的学习笔记
