@@ -43,3 +43,6 @@ selectAll(state, getters)
   return getters.completedSize === getters.totalSize && getters.totalSize > 0
 }
 ```
+
+### vuex demo todolist
+将store.js变成一个文件夹，其中各组成部分拆分为js文件

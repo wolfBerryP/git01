@@ -1,5 +1,5 @@
 <template>
-  <mt-button @click="handleClick" type="primary" style="width: 100%">Test</mt-button>
+  <mt-button @click="handleClick" type="danger" size="normal">Test</mt-button>
 </template>
 
 <script>
@@ -7,12 +7,14 @@ import {Toast} from 'mint-ui'
 export default {
   methods: {
     handleClick(){
-      Toast('mint-ui')
+      Toast({
+        message: '操作成功',
+        iconClass: 'icon icon-success'
+      });
     }
   }
 }
 </script>
 
 <style>
-
 </style>
