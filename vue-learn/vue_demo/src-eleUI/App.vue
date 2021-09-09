@@ -1,25 +1,31 @@
 <template>
   <div>
-    <!--3.使用组件-->
-    <Checkbox />
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        <div class="list-group">
+          <router-link to="/checkbox" class="list-group-item">Checkbox</router-link>
+          <router-link to="/icon" class="list-group-item">Icon</router-link>
+          <router-link to="/infiniteScroll" class="list-group-item">InfiniteScroll</router-link>
+          <router-link to="/Layout" class="list-group-item">Layout</router-link>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="panel">
+          <div class="panel-body">
+              <router-view></router-view>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// 1.引入组件
-import Checkbox from "./components/Checkbox.vue";
-
 export default {
-  // 2.映射标签
-  components: {
-    Checkbox,
-  },
-};
+
+}
 </script>
 
 <style>
-.logo {
-  width: 400px;
-  height: 500px;
-}
+
 </style>
