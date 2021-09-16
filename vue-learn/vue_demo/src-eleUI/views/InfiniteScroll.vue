@@ -1,39 +1,40 @@
 <template>
-  <div
-    v-infinite-scroll="loadMore"
-    infinite-scroll-disabled="busy"
-    infinite-scroll-distance="10"
-  >
-    <div v-for="item in data" :key="item.index">{{ item.name }}</div>
+  <div class="infinite-list-wrapper" style="overflow:auto">
+    <ul
+      class="list"
+      v-infinite-scroll="load"
+      infinite-scroll-disabled="disabled">
+      <li v-for="i in count" class="list-item">{{ i }}</li>
+    </ul>
+    <p v-if="loading">加载中...</p>
+    <p v-if="noMore">没有更多了</p>
   </div>
 </template>
 
 <script>
 export default {
-  //配置对象与Vue写法一致
   data() {
-    //data必须写函数
     return {
-      count: 0,
-      data: [],
-      busy: false,
-    };
+      count: 10,
+      loading: false
+    }
   },
-
-  methods: {
-    loadMore: function () {
-      this.busy = true;
-      setTimeout(() => {
-        for (var i = 0, j = 10; i < j; i++) {
-          this.data.push({ name: this.count++ });
-        }
-        console.log(this.data);
-        this.busy = false;
-      }, 1000);
+  computed: {
+    noMore() {
+      return this.count >= 20
     },
+    disabled() {
+      return this.loading || this.noMore
+    }
   },
-};
+  methods: {
+    load() {
+      this.loading = true
+      setTimeout(() => {
+        this.count += 2
+        this.loading = false
+      }, 2000)
+    }
+  }
+}
 </script>
-
-<style>
-</style>

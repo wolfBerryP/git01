@@ -6,7 +6,8 @@
           <router-link to="/checkbox" class="list-group-item">Checkbox</router-link>
           <router-link to="/icon" class="list-group-item">Icon</router-link>
           <router-link to="/infiniteScroll" class="list-group-item">InfiniteScroll</router-link>
-          <router-link to="/Layout" class="list-group-item">Layout</router-link>
+          <router-link to="/layout" class="list-group-item">Layout</router-link>
+          <router-link to="/select" class="list-group-item">Select</router-link>
         </div>
       </div>
       <div class="col-xs-6">

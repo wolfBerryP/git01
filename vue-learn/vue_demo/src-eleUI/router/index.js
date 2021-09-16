@@ -7,6 +7,7 @@ import Checkbox from "../views/Checkbox";
 import Icon from "../views/Icon";
 import InfiniteScroll from "../views/InfiniteScroll";
 import Layout from "../views/Layout";
+import Select from "../views/Select"
 
 Vue.use(VueRouter)
 
@@ -14,7 +15,7 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      redirect: '/icon'
+      redirect: '/layout'
     },
     {
       path: '/checkbox',
@@ -31,6 +32,10 @@ export default new VueRouter({
     {
       path: '/layout',
       component: Layout
+    },
+    {
+      path: '/select',
+      component: Select
     }
   ]
 })
