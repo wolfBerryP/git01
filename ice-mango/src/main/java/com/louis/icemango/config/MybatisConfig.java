@@ -25,7 +25,8 @@ public class MybatisConfig {
         sessionFactory.setTypeAliasesPackage("com.louis.icemango.**.model");
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         //扫描映射文件
-        sessionFactory.setMapperLocations(resolver.getResources("classpath*:**/sqlmap/*.xml"));
+//        sessionFactory.setMapperLocations(resolver.getResources("classpath*:**/sqlmap/*.xml"));
+        sessionFactory.setMapperLocations(resolver.getResources("classpath*:/mappers/*.xml"));
         return sessionFactory.getObject();
     }
 }
