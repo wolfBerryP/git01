@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+</head>
+<body>
+<form action="192.168.19.181/mango/login">
+    姓名：<input type="text" name="username"><br>
+    密码：<input type="password" name="pwd"><br>
+    性别：<input type="radio" name="sex" value="1"/>男 <input type="radio" name="sex" value="1"/>女 <br>
+    兴趣：<input type="checkbox" name="like" value="smoke"/>抽烟 <input type="checkbox" name="like" value="drink"/>喝酒 <input
+        type="checkbox" name="like" value="firehair"/>烫头
+    <br>
+    所在地：<select name="location" id="">
+                <option value="BJ">北京</option>
+                <option value="SH">上海</option>
+                <option value="NJ">南京</option>
+            </select>
+    <br>
+    简介：
+    <textarea name="introduce" cols="30" rows="10"></textarea>
+    <br>
+    <input type="submit" value="注册">
+    <input type="reset" value="重置">
+</form>
+</body>
+</html>
