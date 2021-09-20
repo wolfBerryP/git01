@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框</title>
+    <style>
+        #box{
+            background-color: #c1c1ec;
+            width: 292px;
+            height:141px;
+            /*边框类型;边框粗细;边框颜色*/
+            border: solid 1.3px #a312e0;
+            margin-top: 18px;
+            margin-left: 10px;
+        }
+        h2{
+            margin: 10px;
+        }
+        /*这里多了个空格，所以失效了*/
+        /*input :nth-of-type(1){*/
+        /*   border: #ac2925 2px solid;*/
+        /*}*/
+        input:nth-of-type(1){
+            border: #b2b2ef 0.5px solid;
+        }
+        span:nth-of-type(1){
+            margin-left: 19px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <h2>Login</h2>
+    <form action="">
+        <div>
+            <span>用户名:</span>
+            <input type="text"/>
+        </div>
+        <div>
+            <span>密码:&nbsp&nbsp&nbsp</span>
+            <input type="password"/>
+        </div>
+        <div>
+            <span>邮箱:&nbsp&nbsp&nbsp</span>
+            <input type="text"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>

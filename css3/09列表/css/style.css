@@ -1,0 +1,34 @@
+#nav{
+    background:aliceblue ;
+    width: 212px;
+    height: 235px;
+}
+.title{
+    font-size: 14px;
+    text-indent: 1em;
+    font-weight: normal;
+    line-height: 18px;
+    background: #b8f1f3;
+    /*图片太大，可以实现*/
+    /*background: #b8f1f3 url("../images/xia.png") 200px 10px no-repeat;*/
+}
+/*
+list-style:
+    non 去掉实心圆
+    circle 空心圆
+    square 正方形
+*/
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+    font-weight: lighter;
+}
+a:hover{
+    color: blue;
+    font-size: 20px;
+    text-decoration: underline;
+}

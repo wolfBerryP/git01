@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本样式</title>
+    <style>
+        #p1{
+            text-align: center;
+            background: #a312e0;
+        }
+        #p2{
+            text-indent: 2em;
+            background: #9d9d9d;
+        }
+        #p3{
+            /*如果不指定文本行高，则字体上下无法居中*/
+            height:50px ;
+            background: #985f0d;
+            line-height: 50px;
+        }
+        #p4{
+            text-decoration: overline;
+        }
+        #p5{
+            text-decoration: line-through;
+        }
+        #p6{
+            text-decoration: underline;
+        }
+        a{
+            text-decoration: none;
+        }
+        img,span{
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <p id="p1">文本居中</p>
+    <p id="p2">首行缩进</p>
+    <p id="p3">文本行高</p>
+    <p id="p4">上划线</p>
+    <p id="p5">中划线</p>
+    <p id="p6">下划线</p>
+    <a href="">超链接无下划线</a>
+    <br>
+    <img src="./images/a.png" alt=""><span>水平对齐</span>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style>
+        .demo a {
+            display: block;
+            height: 50px;
+            width: 50px;
+            float: left;
+            border-radius: 10px;
+            background: blue;
+            text-align: center;
+            color: beige;
+            text-decoration: none;
+            margin-right: 5px;
+            font: bold 20px/50px Arial;
+        }
+        /*
+            标签[属性名=“属性值”]{}
+            支持正则表达式，如：
+                class="xxx",   绝对等于xxx;
+                class*="xxx",  通配，类中含有xxx;
+                class^="xxx",  以xxx开头的类;
+                class$="xxx",  以xxx结尾的类。
+           就近原则。
+        */
+        a[id="first"]{
+            background: #ac2925;
+        }
+        a[class*="item2"]{
+            background: #5bc0de;
+        }
+        a[href^="qwe"]{
+            background: #985f0d;
+        }
+        a[href$="r"]{
+            background: #9d9d9d;
+        }
+        a[class*="first6"]{
+            background: #a312e0;
+        }
+    </style>
+</head>
+<body>
+<p class="demo">
+    <a href="http://www.baidu.com" class="links item first" id="first">1</a>
+    <a href="/adad/faf" class="links item2 first2">2</a>
+    <a href="qwe123" class="links item3 first3">3</a>
+    <a href="eweqe" class="links item4 first4">4</a>
+    <a href="rrrrr" class="links item5 first5">5</a>
+    <a href="tttr" class="links item6 first6">6</a>
+    <a href="yyyr" class="links item7 first7">7</a>
+</p>
+</body>
+</html>

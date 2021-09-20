@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书demo</title>
+    <style>
+        /*超连接默认的样式*/
+        a{
+            color: black;
+            text-decoration: none;
+        }
+        /*鼠标悬停的样式*/
+        a:hover{
+            color: blue;
+            font-size: 50px;
+        }
+        /*未点击的样式*/
+        a:link{
+            color: #5bc0de;
+        }
+        /*已点击的样式*/
+        a:visited{
+            color: darkred;
+        }
+        /*
+            文本阴影
+                水平偏移，垂直偏移，模糊半径，颜色
+        */
+        #shadow{
+            text-shadow: 10px 10px 2px green;
+        }
+    </style>
+</head>
+<body>
+<a href="./images/a.png">
+    <img src="./images/a.png" alt="">
+</a>
+<p>
+    <a href="./images/a.png">书名:白夜行</a>
+</p>
+<p>
+    <a href="./images/a.png">作者:东野奎吾</a>
+</p>
+<p>
+    <a id="shadow" href="./images/a.png">售价:50￥</a>
+</p>
+</body>
+</html>

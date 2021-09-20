@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构伪类选择器</title>
+    <style>
+        /*ul的第一个子元素*/
+        ul li:first-child{
+            background: #4cae4c;
+        }
+        /*ul的最后一个子元素*/
+        ul li:last-child{
+            background: #5bc0de;
+        }
+        /*
+           选择当前p元素 的父级元素，选中父级元素的第三个元素，且选中元素必须和当前元素相同才生效！
+       */
+        p:nth-child(3){
+            background: #761c19;
+        }
+        /*选中父元素下的，第2个p元素，会跳过不同类的元素*/
+        p:nth-of-type(2){
+            background: #a312e0;
+        }
+        /*hover 选择器用于选择鼠标指针浮动在上面的元素*/
+        h1:hover{
+            background: #d58512;
+        }
+    </style>
+</head>
+<body>
+<h1>h1</h1>
+<p>p1</p>
+<h2>h2</h2>
+<p>p2</p>
+<p>P3</p>
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li>li3</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+div{
+    margin:10px;
+    padding:5px;
+}
+#father{
+    border:1px solid #000000;
+    /*overflow: hidden;*/  /*1.hidden超出部分会被修建，不可件，scroll会以滚动条形式，auto根据浏览器选择*/
+    /*height: 200px;    */  /*2.最土的方法，设置父元素高度解决塌陷问题*/
+}
+/*3.推荐使用：使用伪类，加入空的内容，并将其设置为block块元素，clear清除元素两侧的浮动，最终解决父元素塌陷问题*/
+/*#father:after{*/
+/*    content:'';*/
+/*    display: block;*/
+/*    clear: both*/
+/*}*/
+
+/*4.在代码中新增一个空div并清除两侧的浮动*/
+.clear{
+    clear:both;
+    margin: 0;
+    padding: 0;
+}
+.layer01{
+    border: 1px red solid;
+    float: left;
+}
+.layer02{
+    border: 1px red  solid;
+    float: left;
+}
+.layer03{
+    border: 1px red solid;
+    float: right;
+}
+.layer04{
+    border: 1px red  dashed;
+    font-size: 12px;
+    line-height: 23px;
+    float: right;
+}

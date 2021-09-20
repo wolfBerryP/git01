@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层次选择器</title>
+  <style>
+      /*后代选择器:body下所有p标签*/
+      /*body p{*/
+      /*  color: #5bc0de;*/
+      /*}*/
+
+      /*子选择器:body下一层的p标签*/
+      /*body>p{*/
+      /*  color: #985f0d;*/
+      /*}*/
+
+      /*相邻兄弟选择器:id或class的下一个元素*/
+      /*#active + p{*/
+      /*  color: #d9083a;*/
+      /*}*/
+
+      /*通用兄弟选择器:id或class下一层所有的元素*/
+      .demo ~ p{
+        color: #4cae4c;
+      }
+  </style>
+
+</head>
+<body>
+  <p class="demo">p1</p>
+  <p id="active">p2</p>
+  <p>p3</p>
+  <ul>
+    <li>
+      <p>p4</p>
+    </li>
+    <li>
+      <p>p5</p>
+    </li>
+    <li>
+      <p>p6</p>
+    </li>
+  </ul>
+</body>
+</html>
