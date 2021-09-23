@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子属性</title>
+    <style>
+        section{
+            display: flex;
+            width:800px;
+            height: 100px;
+            background: #a312e0;
+        }
+        span{
+            background: #d9483a;
+            margin:10px;
+
+            /*
+                flex-grow: 1; 定义项目的放大比例，默认为0
+                flex-shrink: 1; 定义项目的缩小比例，默认为1
+                flex-basis: 100px; 定义在分配多余空间之前，项目占据的主轴空间
+                flex : 0,1,auto;  flex为上三个属性的简写属性，01auto为默认值
+                flex:1;  只有一个数字时代表flex-grow的值
+            */
+            flex: 1
+        }
+
+        /*span:nth-child(2){*/
+        /*    flex:2;*/
+        /*}*/
+
+        span:nth-child(2){
+            order: -1;   /*order用来给元素排列顺序，默认为0*/
+        }
+
+    </style>
+</head>
+<body>
+<section>
+    <span>span1</span>
+    <span>span2</span>
+    <span>span3</span>
+</section>
+</body>
+</html>
