@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        #box{
+            /*border: 2px solid red;*/
+            float: left;
+            position: relative;
+            /*border-radius: 5px;*/  /*在这加没用，因为这个元素浮动了*/
+        }
+        #box>div{
+            float: left;
+            /*border: 2px solid blue;*/
+            color: whitesmoke;
+            padding: 8px;   /*padding可以扩大元素*/
+            width: 50px;
+            height: 9px;
+            text-align: center;
+            font: bolder 3px/9px 黑体;   /*设置了font  line-height失效 因为font已有这个属性*/
+
+        }
+        #box>div:first-child{
+            background-color: #a5e744;
+            border-radius: 5px 0 0 0;
+        }
+        #box>div:nth-child(2){
+            background-color: #3970e0;
+        }
+        #box>div:nth-child(3){
+            background-color: #cb1e2d;
+        }
+        #box>div:last-child{
+            background-color: #bbb418;
+            border-radius: 0 5px 0 0;
+        }
+        #box>div>div{
+            width: 264px;
+            height: 100px;
+            /*border: 2px solid green;*/
+            position: absolute;
+            top: 25px;
+            left: 0;
+            /*text-align: center;*/
+            display: none;
+        }
+        #box>div:hover>div{
+            display: block;
+        }
+
+        /*#box>div>div:first-child*/
+        /*
+            [bug]渐变的选择器选用了如上的形式，导致span中的文字不能显示：
+
+            这样选中了四个div,第一个div有字，但是后面几个都没有，
+            于是后面的把文字遮盖了。有一个层次的概念。
+        */
+
+        #box>div:first-child>div{
+            background: linear-gradient(50deg, #a5e744 50%, #2e893e 100%);
+            border-radius: 0 0 5px 5px;
+            display: block;
+        }
+        #box>div:nth-child(2)>div{
+            background-image: linear-gradient(50deg, #3970e0 50%, #0a14c3 100%);
+            border-radius: 0 0 5px 5px;
+        }
+        #box>div:nth-child(3)>div{
+            background-image: linear-gradient(50deg, #f22626 50%, #9e1823 100%);
+            border-radius: 0 0 5px 5px;
+        }
+        #box>div:last-child>div{
+            background-image: linear-gradient(50deg, #f7dc2c 50%, #bbb418 100%);
+            border-radius: 0 0 5px 5px;
+        }
+        span{
+            font: bolder 20px/85px 黑体 whitesmoke;
+            padding-right:20px;
+        }
+        button{
+            border: 2px solid white;
+            background: whitesmoke;
+            border-radius: 2px;
+            padding: 1px 2px;
+            font: bolder 3px 黑体;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div>
+        连续包月
+        <div>
+            <span>￥19元</span>
+            <a href=""><button>自动续费</button></a>
+        </div>
+    </div>
+    <div>
+        连续包季
+        <div>
+            <span>￥56元</span>
+            <a href=""><button>自动续费</button></a>
+        </div>
+    </div>
+    <div>
+        年费
+        <div>
+            <span>￥199元</span>
+            <a href=""><button>包年</button></a>
+        </div>
+    </div>
+    <div>
+        连续包年
+        <div>
+            <span>￥180元</span>
+            <a href=""><button>自动续费</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

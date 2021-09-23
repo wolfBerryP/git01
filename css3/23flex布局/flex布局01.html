@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自习flex</title>
+    <style>
+        body{
+            text-align: center;
+            line-height: 100px;
+            display: flex;         /*弹性布局 也可用在行内元素 display:inline-flex; */
+            flex-direction: row;   /* 主轴方向  row（默认）/column/row-reserve/column-reserve */
+            flex-wrap: wrap;       /*是否换行  nowrap（默认）/wrap/wrap-reserve 换行，第一行在最下方 */
+
+            /*flex-flow: column wrap;   !*direction和wrap的简写属性*!*/
+
+            /*
+                justify-content
+                    定义在主轴方向上的对齐方式
+                    flex-start 左对齐/
+                    flex-end 右对齐/
+                    center 居中 /
+                    space-between 两端对齐，中间有间隔/
+                    space-around  两端对齐，每个块两侧间隔相等
+            */
+            /*justify-content: center;*/
+
+            /*align-items: center;*/   /*这里看不出效果，见布局02*/
+
+            align-content: center;
+
+        }
+        div{
+            width:200px;
+            height: 100px;
+            border: 1px solid red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">1</div>
+<div id="box2">2</div>
+<div id="box3">3</div>
+<div id="box4">4</div>
+<div id="box5">5</div>
+<div id="box6">6</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>align-items演示</title>
+    <style>
+        #main {
+            width: 220px;
+            height: 300px;
+            border: 1px solid black;
+            display: flex;
+            /*
+                align-items:
+                    flex布局中，定义在交叉轴上的布局方式
+
+                    flex-start /
+                    flex-end /
+                    center /
+                    stretch(拉伸) /
+                    baseline(文字为基准对齐)
+            */
+            align-items: stretch;
+        }
+
+        #main div {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main">
+    <div style="background-color:coral;">红色</div>
+    <div style="background-color:lightblue;">蓝色</div>
+    <div style="background-color:lightgreen;">有更多内容的绿色 div</div>
+</div>
+
+<p><b>注释：</b>Internet Explorer 10 以及更早的版本不支持 align-items 属性。</p>
+
+</body>
+</html>

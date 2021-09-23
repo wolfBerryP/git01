@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform3d</title>
+    <style>
+      #box1{
+          width: 300px;
+          height: 200px;
+          background: hotpink;
+          text-align: left;
+          margin: 100px auto;
+          transition: all 3s;  /*过渡*/
+      }
+      #box1:hover{
+          transform: perspective(100px) rotateX(180deg);
+          backface-visibility:visible;  /*visible：元素背面可见；hidden：元素背面不可见*/
+      }
+    </style>
+</head>
+<body>
+<div id="box1">
+    <span>透视：perspective(n px)</span>
+    <p>如果不设置perspective,会将3d的效果垂直投影到屏幕上，最终展示出来的只是元素的宽高变化。</p>
+</div>
+</body>
+</html>

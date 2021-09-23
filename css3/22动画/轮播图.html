@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #banner{
+            margin: 25px auto;
+            height: 450px;
+            width:800px;
+            border: 1px solid red;
+            overflow: hidden;  /*将多余的图片隐藏*/
+        }
+        #box{
+            width: 2400px;
+            /*animation: play 10s infinite 1s;*/
+            animation-name: play;   /*动画名称*/
+            animation-duration: 8s;  /*动画持续时间*/
+            animation-timing-function: ease-out;  /*动画播放函数，匀速*/
+            animation-delay: 0.8s; /*动画延迟播放时间*/
+            animation-iteration-count: infinite; /*动画播放次数，无限*/
+            animation-direction: normal;
+            animation-fill-mode: forwards; /*动画结束后对象的状态，为动画开始时状态  none/forwards/backwards/both */
+        }
+        #box:hover{
+            animation-play-state: paused;  /*鼠标悬停时画面静止*/
+        }
+        #box>img{
+            float: left;
+        }
+        @keyframes play {
+            50%{
+                margin-left: -800px;
+            }
+            100%{
+                margin-left: -1600px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="banner">
+    <div id="box">
+        <img src="./images/云海.jpg" alt="">
+        <img src="./images/山顶.jpg" alt="">
+        <img src="./images/湖面.png" alt="">
+    </div>
+</div>
+</body>
+</html>
