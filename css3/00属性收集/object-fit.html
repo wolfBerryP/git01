@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><img><video>元素自适应</title>
+    <style>
+        img{
+            height: 400px;
+            width: 800px;
+            /*object-fit: fill;    !* 默认值。调整替换后的内容大小，以填充元素的内容框。如有必要，将拉伸或挤压物体以适应该对象。*!*/
+            object-fit: contain;    /*缩放替换后的内容以保持其纵横比，同时将其放入元素的内容框。*/
+
+            /*object-fit: cover;     !*调整替换内容的大小，以在填充元素的整个内容框时保持其长宽比。该对象将被裁剪以适应。*!*/
+
+            /*object-fit:none;   !*不对替换的内容调整大小。*!*/
+            /*object-fit: scale-down;  !*内容的尺寸与 none 或 contain 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。*!*/
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <img src="./images/kyz.png" alt="">
+</div>
+</body>
+</html>
