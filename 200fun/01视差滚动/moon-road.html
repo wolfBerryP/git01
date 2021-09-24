@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>moonlight-road</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+</head>
+<body>
+<section>
+    <img src="./images/bg.jpg" alt="" id="bg">
+    <img src="./images/mountain.png" alt="" id="mountain">
+    <img src="./images/moon.png" alt="" id="moon">
+    <img src="./images/road.png" alt="" id="road">
+    <h2 id="text">Moon Light</h2>
+</section>
+<div>
+    <h2>Parallax scrolling</h2>
+    <p>
+        But if you wanna cry,cry on my shoulder,
+        if you need someone who cares for you,
+        if you"re feeling sad your heart gets colder,
+        yes I show you what real love can do.
+        All my best memories come back clearly to me,
+        some can even make me cry,
+        just lick before.
+        It's yesterday once more.
+    </p>
+</div>
+<script type="text/javascript">
+    let bg = document.getElementById("bg");
+    let moon = document.getElementById("moon");
+    let mountain = document.getElementById("mountain");
+    let road = document.getElementById("road");
+    let text = document.getElementById("text");
+
+    window.addEventListener('scroll',function (){
+        var value = window.scrollY;
+        bg.style.top = value * 0.5 +'px';
+        moon.style.left = -value *0.5 + 'px';
+        mountain.style.top = -value *0.15 + 'px';
+        road.style.top = value *0.15 + 'px';
+        text.style.top = value *1 + 'px';
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Scroll Effect</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<section>
+    <span class="curve">
+        <img src="./images/curve.png" alt="">
+    </span>
+</section>
+<script type="text/javascript">
+    /*querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。*/
+    var scroll = document.querySelector('.curve');
+    window.addEventListener('scroll', function (){
+        //滚动条移动的距离来确定缩放大小
+        console.log('y轴移动的距离是：' + window.scrollY);
+        //value在 0~1之间，当蓝色图像与黑色背景水平时，vlaue>=400
+        var value = 1 + window.scrollY / -400;
+        //在y轴方向的距离缩放
+        scroll.style.transform = `scaleY(${value})`;
+    })
+</script>
+</body>
+</html>

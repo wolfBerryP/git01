@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>混合模式</title>
+    <style>
+        #box{
+            background: red;
+        }
+        #box img{
+            /*
+                normal	这是默认值。
+                multiply
+                screen
+                overlay
+                darken
+                lighten
+                color-dodge
+                color-burn
+                difference
+                exclusion
+                hue
+                saturation
+                color
+                luminosity
+            */
+            mix-blend-mode:color;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="./images/flower.png" alt="" width="299" height="297">
+</div>
+</body>
+</html>

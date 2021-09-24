@@ -1,0 +1,73 @@
+*{
+    margin:0;
+    padding:0;
+    /*
+        font-family: "xxx",xxx;
+        引号中为主选字体，后面为主选字体获取不到的备选字体
+    */
+    font-family: sans-serif;   /*无衬线字体*/
+}
+body{
+    background: #0a2a43;   /*给空白处上色-藏青*/
+    min-height: 1500px;
+}
+section{
+    position:relative;
+    width:100%;
+
+    /*
+       vh就是当前屏幕可见高度的1%，也就是说
+       height:100vh == height:100%;
+       但是当元素没有内容时候，设置height:100%，该元素不会被撑开，此时高度为0，
+       但是设置height:100vh，该元素会被撑开屏幕高度一致。
+    */
+    height: 100vh;
+    overflow: hidden;
+    /*使用flex布局，将四张图片横向排列，并定位到四张图片的中心*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section:before{
+    content: '';   /*content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容。*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #0a2a43, transparent);
+    z-index: 10000;
+}
+section:after{
+    content: '';   /*content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容。*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#0a2a43;
+    z-index: 10000;
+    mix-blend-mode: color;
+}
+/*使用绝对定位，将四张图片都定位到同一位置，进行重合*/
+section img{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /*调整替换内容的大小，以在填充元素的整个内容框时保持其长宽比。该对象将被裁剪以适应*/
+    pointer-events: none;
+}
+#text{
+    position: relative;
+    color: white;
+    font-size: 6em;  /*1em为当前字体1个字大小*/
+    z-index: 1;
+}
+#road{
+    z-index: 2;
+}
+div{
+    color: #c6bebe;
+    margin:10px;
+}

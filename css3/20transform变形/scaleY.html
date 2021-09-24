@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scaleY</title>
+    <style>
+        #box{
+            width:250px;
+            height:80px;
+            border:1px solid gray;
+            margin: 45px auto;
+        }
+        #box:hover{
+            transform:scaleY(0.5);   /*Y轴方向放大2倍*/
+            /*
+              h-shadow	必需的。水平阴影的位置。允许负值
+              v-shadow	必需的。垂直阴影的位置。允许负值
+              blur	可选。模糊距离
+              spread	可选。阴影的大小
+            */
+            box-shadow:0px 0px 5px 2px yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
