@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>唯一全局变量</title>
+</head>
+<body>
+<script type="text/javascript">
+  //全局变量的使用会导致许多变量名冲突，可以定义一个自己的全局变量代替window,其实不就是个对象...
+  let iceMountain = {}
+  iceMountain.name='peirongju';
+  iceMountain.add = function (a,b){
+    return a+b;
+  }
+</script>
+</body>
+</html>

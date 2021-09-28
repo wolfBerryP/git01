@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>严格检查模式</title>
+</head>
+<body>
+<script type="text/javascript">
+    //写在开头，可以进行检查，否则 i=1将会成为全局变量，容易和其他文件冲突。
+    // 严格检查预防js规则不严谨引发的种种问题。
+    "use strict";
+    // i = 1;   //打开浏览器console，会直接报错
+    let i = 1;
+</script>
+</body>
+</html>

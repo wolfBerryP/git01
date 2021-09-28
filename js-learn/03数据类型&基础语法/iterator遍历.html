@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6新特性</title>
+</head>
+<body>
+<script type="text/javascript">
+    //1.遍历数组
+    let arr = [1, 2, 3, 4, 5];
+    //加入了iterator迭代器，才可以使用of遍历
+    for (let i of arr) {
+        console.log(i);
+    }
+
+    for (let i in arr) {
+        console.log('in=>' + i);
+    }
+
+    arr.unshift(3);
+    for (let i in arr) {
+        console.log('in1=>' + i);
+    }
+
+    //通过赋值的方式给数组新增加一个元素，
+    // 结果新增的元素打印出来的不是下标，是一个存在已久的问题
+    arr.name = 'zhangsan';
+    for (let i in arr) {
+        console.log('in2=>' + i);
+    }
+
+    //2.遍历map、set  用in是遍历不了的，必须of
+    let map = new Map([['name','wangwu'],['age',20],['score', 99]]);
+    for(let i of map){
+        console.log('map=>'+ i);
+    }
+    let set = new Set([11,2,4,6,8]);
+    for(let i of set){
+        console.log('set=>'+ i);
+    }
+</script>
+</body>
+</html>

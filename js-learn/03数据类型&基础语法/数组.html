@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script type="text/javascript">
+  //1.Array可以包含任意数据类型
+  let array = [1,2,'3','2',null, NaN,undefined,{name: 'zhangsan'}];
+  console.log(array);
+
+  //2.长度
+  console.log(array.length);
+
+  //3.下标位置
+  console.log(array.indexOf(undefined));
+
+  //4.截取数组 相当于subString
+  console.log(array.slice(2));
+  console.log(array.slice(2,5));
+
+  //5.操作元素
+  //从尾部压入一个元素
+  console.log(array.push('a'));  //这样打印的是数组新的长度 => 9
+  console.log(array);  //打印整个数组
+  //弹出最后一个元素
+  array.pop();
+  console.log('pop=>' +array);
+  console.log(array);
+  //从头部插入元素
+  array.unshift('a','b','c');
+  console.log(array);
+  //从头部删除元素
+  array.shift();  //一次只能删除一个
+  console.log(array);
+
+  //6.排序
+  let array1 = ['F','A','S'];
+  console.log(array1.sort());
+
+  //7.翻转
+  console.log(array1.reverse());
+
+  //8.拼接
+  console.log(array1.concat('D'));
+
+  //9.连接
+  console.log(array1.join('='));
+
+  //10.定义二维数组
+  let array2 = [[1,2],[2,4]];
+  console.log(array2[1][1]);
+</script>
+</body>
+</html>

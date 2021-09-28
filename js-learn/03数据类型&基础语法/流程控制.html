@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>流程控制</title>
+</head>
+<body>
+<script type="text/javascript">
+    "use strict";
+    let i = 0;
+    //1.判断 if/else
+
+    //2.循环
+
+    //2.1 while
+    while (i < 100) {
+        console.log(i);
+        i = i + 10;
+    }
+
+    i = 0;
+
+    //2.2 do while
+    do {
+        console.log(i);
+        i = i + 10;
+    } while (i < 100);
+
+    //2.3 forEach
+    let age = [1, 2, 3, 4, 5, 6, 7, 8];
+    age.forEach(function (val) {
+        console.log(val);
+    });
+
+    //2.4  in  获取数组下标
+    for (var index in age) {
+        console.log(`index=>${index}`);
+        console.log(age[index])
+    }
+</script>
+</body>
+</html>

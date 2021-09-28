@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>arguments&rest</title>
+</head>
+<body>
+<script type="text/javascript">
+    //1.函数定义方式一
+    //js中，调用只有一个参数的函数时即使传入多个也不会报错
+    function abs(x) {
+        //arguments可以获取传入的所有入参
+        for(let i=0;i<arguments.length;i++){
+            console.log(arguments[i]);
+        }
+        if (x >= 0) {
+            return x;
+        } else {
+            return -x;
+        }
+    }
+    abs(-10,2,-2,4);
+
+    var abs2 = function (x, ...rest){
+        //rest可以获取除了该函数需要使用的参数x外的所有参数
+        //rest只能写在最后，并且必须加...
+        console.log(rest);
+        if (x >= 0) {
+            return x;
+        } else {
+            return -x;
+        }
+    }
+    abs2(-10,2,-2,4);
+
+    //检验入参，手动抛出异常
+    var abs3 = function (x){
+        if(typeof x!==Number){
+            throw 'Not a Number1';
+        }
+        if (x >= 0) {
+            return x;
+        } else {
+            return -x;
+        }
+    }
+    abs3('xiaoming');
+
+</script>
+</body>
+</html>

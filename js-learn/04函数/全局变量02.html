@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window & alert</title>
+</head>
+<body>
+<script type="text/javascript">
+    //alert为window中的方法属性
+    var x = 'xxx';
+    window.alert(x);  //xxx
+    //可以自定义变量获取alert
+    var old_alert = window.alert;
+    old_alert(x);  //xxx
+    //可以重新定义alert
+    window.alert = function (x){
+        console.log(x);
+    }
+    window.alert(1,2);
+    //复原
+    window.alert =  old_alert;
+    window.alert(456);  //456
+</script>
+</body>
+</html>

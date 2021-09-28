@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局变量</title>
+</head>
+<body>
+<script type="text/javascript">
+  //1.使用var在外部声明
+  // var x=1;
+  // function a (){
+  //   alert(x);
+  // }
+
+  //2.直接定义
+  // x=1;
+  // function b(){
+  //     alert(x);
+  // }
+
+  //3.使用window对象定义
+  window.x=1;
+  function c(){
+      alert(x);
+  }
+
+  //注:所有的全局变量都会绑定到window对象上
+
+</script>
+</body>
+</html>

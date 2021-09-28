@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script type="text/javascript">
+    "use strict";
+    //1.定义一个对象
+    let girl = {
+        name: 'alice',
+        age: 18,
+        hobby: 'reading'
+    }
+
+    //2.使用对象没有的属性，不会报错，只会报undefined
+    console.log(girl.score);
+
+    //3.给对象赋新值
+    girl.score = '149';
+    console.log(girl);
+
+    //4.删减对象属性
+    delete girl.score;
+    console.log(girl);
+
+    //5.判断对象是否有某个属性
+    console.log('score' in girl); //js对象的属性名、键 都是字符串，值是任意类型
+    console.log('toString' in girl);  //js中的对象自动继承object
+
+    //6.判断对象本身（非继承object）是否拥有某个属性
+    console.log(girl.hasOwnProperty('name'));
+    console.log(girl.hasOwnProperty('toString'));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>集合</title>
+</head>
+<body>
+<script type="text/javascript">
+    //1.Map
+    let map = new Map([['name', 'zhangsan'], ['age', 18], ['sex', null]]);
+    console.log(map);
+    map.set('like', 'reading');  //新增属性
+    console.log(map);
+    let name = map.get('name');  //获取属性值
+    console.log(name);
+    map.delete('sex');  //删除属性
+    console.log(map);
+    console.log(map.has('name'));  //判断是否有某属性
+
+    //2.Set
+    let set = new Set([1, 1, 1, 2, 2, 3, 3]);
+    console.log(set);
+    set.add(4);  //只能一个个加
+    console.log(set);
+    set.delete(3);
+    console.log(set);
+    console.log(set.has(2));
+</script>
+</body>
+</html>

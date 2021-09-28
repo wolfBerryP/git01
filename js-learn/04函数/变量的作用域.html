@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的作用域</title>
+</head>
+<body>
+<script type="text/javascript">
+  //1、外部不能使用函数内部定义的变量 x
+  // function scope(){
+  //   var x = 1;
+  //   x = x+1;
+  //
+  // }
+  // x=x+2;
+
+  //2、内部函数外部函数可以重名
+  //内部函数由内向外对变量进行查找，如果发现有重名的则内部变量>外部变量
+  // function scope(){
+  //   let x = 1;
+  //   function scope2(){
+  //     let x = 'A';
+  //     console.log('inner' + x);  //innerA
+  //   }
+  //   console.log('outer' + x);  //outer1
+  //   scope2();
+  // }
+  // scope();
+
+  //3、不同的函数内可以存在同名变量
+  // function scope(){
+  //   var x=1;
+  //   console.log(x);
+  // }
+  // function scope1(){
+  //   var x=2;
+  //   console.log(x);
+  // }
+  // scope1();
+  // scope();
+
+  //4、内部函数可以使用外部函数定义的变量，反之则不行
+  // function scope(){
+  //   var x =1;
+  //   function scope2(){
+  //     var y=1;
+  //     console.log(x+y);
+  //   }
+  //   scope2();
+  //   console.log(x+y);
+  // }
+  // scope();
+
+  //5、变量作用域提升
+  //var 定义的变量，作用域会自动提升到最上方，但是赋值不会提升
+  function scope(){
+    var x ='X';
+    console.log(x+y);
+    var y='Y';
+  }
+  scope();
+</script>
+</body>
+</html>
