@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class继承</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    class Person {
+        constructor(name) {
+            this.name= name;
+        }
+
+        hello(){
+            alert('hello');
+        }
+    }
+
+    class Student extends Person{
+        constructor(name,grade) {
+            super(name);
+            this.grade = grade;
+        }
+        introduce(){
+            alert('我今年一年级了');
+        }
+    }
+
+    var xiaoming = new Person('xiaoming');
+    var zhangsan = new Student('xiaohong','一年级');
+
+</script>
+</body>
+</html>

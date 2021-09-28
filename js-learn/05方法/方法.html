@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法</title>
+</head>
+<body>
+<script type="text/javascript">
+//1.写法一：直接置于对象内
+var ice = {
+    name: 'pei',
+    born: 2010,
+    getAge: function () {
+        var now = new Date();
+        var age = now.getFullYear() - this.born;
+        return age;
+    }
+}
+
+//2.写法二：写在对象外
+var getAge = function (){
+    var now = new Date();
+    var age = now.getFullYear() - this.born;
+    return age;
+}
+var rain = {
+    name: '张三',
+    born: 1998,
+    age: getAge
+}
+
+//getAge.apply(rain,[]);  //在console中使用，可以指定调用的对象，以此调用不同的getAge方法
+
+
+</script>
+</body>
+</html>

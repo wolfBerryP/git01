@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>protoType新增方法</title>
+</head>
+<body>
+<script type="text/javascript">
+    //js中，函数就是一个类的实现
+    function MyClass(name,age){
+        this.name = name;
+        this.age = age;
+        this.toString = function(){
+            alert(this.name +":"+ this.age);
+        };
+    }
+    MyClass.prototype = {
+        sayHello:function(){
+            alert('sayHello')
+        }
+    };
+
+    //在控制台直接输入 MyClass.sayHello ,会报错：VM399:1 Uncaught TypeError: MyClass.sayHello is not a function
+    //创建实例后，调用实例 myclass则不报错
+    //由此知 类不会加入window对象中，实例才会
+    var myclass= new MyClass('zhangsan','23');
+    myclass.sayHello();
+    myclass.toString();
+
+</script>
+</body>
+</html>
