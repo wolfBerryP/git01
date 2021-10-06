@@ -1,0 +1,170 @@
+*{
+    margin:0;
+    padding:0;
+        /* 告诉浏览器：你想要设置的边框和内边距的值是包含在 width 内的。也就是说，如果你将一个元素的 width 设为 100px，那么这 100px 会包含它的 border 和 padding，内容区的实际宽度是 width 减 去(border + padding) 的值。大多数情况下，这使得我们更容易地设定一个元素的宽高。
+注：border-box 不包含 margin。 */
+    box-sizing: border-box;
+}
+body{
+    /* vh就是当前屏幕可见高度的1%，也就是说
+    height:100vh == height:100%;
+    但是有个好处是当元素没有内容时候，设置height:100%该元素不会被撑开，
+    设置height:100vh，该元素会被撑开屏幕高度一致。 */
+    height: 100vh;
+    background-color: #dcdde1;
+    display:flex;
+    /* 定义在主轴方向上的对齐方式 */
+    justify-content: center;   
+    /* 定义在交叉轴方向上的对齐方式 */
+    align-items: center;
+    flex-direction: column;
+    /* 裁剪 div 元素中内容的左/右边缘 - 如果溢出元素的内容区域的话：则hidden不提供滚动条 */
+    overflow-x: hidden;
+}
+#select{
+    /* 隐藏元素并脱离文档，流就是隐藏该区域，不占实际空间，但对后台来说真实存在，可以获取被隐藏的元素简单的来说就是将元素设置为none的时候既不会占据空间，也无法显示，相当于该元素不存在。 */
+    display: none;
+}
+.card{
+    width: 400px;
+    height: 600px;
+    background-color: #ffffff;
+    /* 
+        h-shadow	必需。水平阴影的位置。允许负值。	
+        v-shadow	必需。垂直阴影的位置。允许负值。	
+        blur	可选。模糊距离。	
+        spread	可选。阴影的尺寸。	
+        color	可选。阴影的颜色。请参阅 CSS 颜色值。	
+        inset	可选。将外部阴影 (outset) 改为内部阴影。
+
+        颜色仅设置一个透明度
+     */
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, .3);
+    transition:all .6s;
+    text-align:center;
+}
+.img{
+    width:400px;
+    height:230px;
+    background:url(../images/乾.png);    
+/*
+    background-size: length|percentage|cover|contain;
+
+    length    	
+    设置背景图像的高度和宽度。
+    第一个值设置宽度，第二个值设置高度。
+    如果只设置一个值，则第二个值会被设置为 "auto"。
+
+    percentage	
+    以父元素的百分比来设置背景图像的宽度和高度。
+    第一个值设置宽度，第二个值设置高度。
+    如果只设置一个值，则第二个值会被设置为 "auto"。
+
+    cover	
+    把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。
+    背景图像的某些部分也许无法显示在背景定位区域中。
+
+    contain	
+    把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
+ */
+    background-size:cover;
+    transition: all .6s;
+}
+.title{
+    font-size: 30px;
+    color: rgba(88, 88, 88); /* rgba颜色取值范围0-255*/
+    margin:30px 0 15px 0;
+    transition: all .6s;
+    transition-delay: .2s;
+}
+.desc{
+    width: 400px;
+    margin-bottom: 20px;
+    padding: 0 30px;
+    line-height: 25px;
+    opacity: 1;
+    color: rgb(170, 170, 170);
+}
+.content{
+    display: none;
+    height:2500px;
+    text-align: center;
+    padding: 0 20%;
+    line-height: 40px;
+    background-color: #ffffff;
+}
+.content p{
+    margin: 30px 0 ;
+    text-align: left;
+    /* table	此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。 */
+    display: table;
+    justify-content: center;
+}
+.icon{
+    width:300px;
+    font-size:22px;
+    margin:2px auto;
+    display:flex;
+    justify-content: center;
+}
+.icon i{
+    margin: 10px;
+    font-size: 22px;
+    color: rgb(75, 75, 75);
+}
+
+/* 点击放大 */
+#select_lable{
+    display: block;
+    position:absolute;
+    width:400px;
+    height:600px;
+    z-index: 999;
+}
+#select:checked~.card #select_lable{
+    width:100vw;
+    height:100vh;
+}
+#select:checked~.card{
+    width:100vw;
+    height:100vh;
+}
+#select:checked~.card .img{
+    width:100vw;
+    height:610px;
+    overflow: hidden;
+} 
+#select:checked~.card .title{
+    /* 
+        平移
+        translate 是同时设置  translateX  和 translateY，
+         所以里面可以填两个参数， 第一个值 X  第二个 Y
+     */
+    transform: translate(-400px);
+    color: #ffffff;
+    font-size: 70px;
+}
+#select:checked~.card .desc{
+    display:none;
+    opacity: 0;
+}
+#select:checked~.card .icon{
+    display:none;
+}
+#select:checked~.card .content{
+    display: block;
+    animation: content 2s;
+    transform: translateY(-50px);
+}
+
+@keyframes content{
+
+    from{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
