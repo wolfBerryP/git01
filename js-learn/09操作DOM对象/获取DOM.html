@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取DOM</title>
+</head>
+<body>
+<div id="father">
+  <h2>tag获取</h2>
+  <p class="p1">class获取</p>
+  <p id="p2">id获取</p>
+</div>
+<script type="text/javascript">
+  //根据class和tag返回的为数组，需要使用下标获取其中的innerHTML/innerText属性
+  var h2 = document.getElementsByTagName('h2');
+  console.log(h2);
+  var p1 = document.getElementsByClassName('p1');
+  console.log(p1);
+  var p2 = document.getElementById('p2');
+  console.log(p2);
+  var father = document.getElementById('father');
+  var children = father.children;
+  console.log(children);
+</script>
+</body>
+</html>

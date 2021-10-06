@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除DOM</title>
+</head>
+<body>
+<div id="father">
+    <h2>tag获取</h2>
+    <p class="p1">class获取</p>
+    <p id="p2">id获取</p>
+</div>
+<script type="text/javascript">
+    //删除步骤: 1.得到子节点 2.得到子节点的父节点 3.通过父节点移除子节点
+    let self = document.getElementsByClassName('p1');
+    let father = self[0].parentElement;
+    father.removeChild(self[0]);
+    //删除的时候，子节点的下标是动态变化的，所以删除三次0就可以全部删除
+    // father.removeChild(father.children[0]);
+    // father.removeChild(father.children[0]);
+    // father.removeChild(father.children[0]);
+</script>
+</body>
+</html>

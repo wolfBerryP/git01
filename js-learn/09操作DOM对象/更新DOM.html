@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>更新DOM</title>
+</head>
+<body>
+<div id="father">
+    <h2>tag获取</h2>
+    <p class="p1">class获取</p>
+    <p id="p2">id获取</p>
+</div>
+<script type="text/javascript">
+    //tag/class/children 获得的都是列表，可以使用item(x)来定位需要的元素
+    let h2 = document.getElementsByTagName('h2');
+    h2.item(0).innerHTML='<strong>innerHTML</strong>';
+    let father = document.getElementById('father');
+    let children = father.children;
+    //改变输入值
+    children.item(2).innerText='innerText';
+    //改变样式
+    children.item(1).style.color = 'blue';
+    children.item(1).style.fontFamily = '华文行楷';
+</script>
+</body>
+</html>

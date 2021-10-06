@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        // function sum(a=undefined,b=undefined){
+        //     return a+b;
+        // }
+            
+        function sum(a,b){
+            return a+b;
+        }
+
+        //如果不传递b的参数，则b默认为undefined,结果为NaN
+        //由此可知js中如果不传递参数，参数默认为undefined
+        let result = sum(100);
+        console.log(`result：${result}`)
+    </script>
+</body>
+</html>

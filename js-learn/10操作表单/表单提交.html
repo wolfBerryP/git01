@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单提交</title>
+    <!--script src=/script-->
+    <script src="./js/MD5.js"></script>
+</head>
+<body>
+<form action="https://www.bilibili.com/" method="post" onsubmit="return aaa()">
+    <!--使用required可以弹出非空校验-->
+    <!--  <p>-->
+    <!--    <span>用户名：</span><input type="text" id="username" required/>-->
+    <!--  </p>-->
+    <p>
+        <span>用户名：</span><input type="text" id="username" name="username">
+    </p>
+    <p>
+        <!--无name的属性将不会进行提交-->
+        <span>密码：</span><input type="password" id="password">
+    </p>\
+    <!--
+        使用隐藏域，和name属性来提交真正的pwd:
+
+        1.密码使用md5进行加密。
+        2.加密过的密码置入隐藏域。
+        3.提交的时候提交的是隐藏域中的密码。
+        4.如果不用隐藏域而直接提交输入框中密码。则md5加密后提交的一瞬间，密码串会可见的边长，技术人员一看就知道了是什么加密模式。
+    -->
+    <input type="hidden" id="md5pwd" name="password">
+    <button type="submit">提交</button>
+</form>
+<script>
+     function aaa(){
+         let password = document.getElementById('password');
+         let md5pwd = document.getElementById('md5pwd');
+         let md5 = b64_md5(password.value);
+         console.log(md5);
+         //使用.value就可以给该dom节点赋值
+         md5pwd.value = md5;
+         //true就是通过提交，false就是阻止提交，可以校验判断表单内容
+         return true;
+     }
+</script>
+</body>
+</html>

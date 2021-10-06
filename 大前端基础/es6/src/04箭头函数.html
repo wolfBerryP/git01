@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+<body>
+    <script>
+        var sum = function(a , b){
+            return a + b;
+        }
+
+        //箭头函数改进1
+        var sum2 = (a , b)=>{
+            return a + b;    
+        }
+
+        //箭头函数改进2
+        var sum3 = (a , b) => a+b;
+
+        //如果只有一个参数可以省去括号
+        var aaa = a=>a;
+
+        //1.去掉function
+        //2.括号后面加箭头
+        //3.如果没有逻辑体只有return,可以省略括号及return
+        //4.如果只有一个入参，可以省略括号
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let和const</title>
+</head>
+<body>
+    <script>
+        // 1： 在javascrit定义数据类型只有一种标识 - var
+        // 灵魂拷问：js有数据类型吗？
+        // 有，string,number,Object, boolean, undefined
+        // 什么是语言：电脑内存中，人通过代码和电脑沟通。
+        let name = "zhangsan";
+        let age = 100;
+        let flag = false;   
+        //js被骂没常量
+        const PI = Math.PI;
+        // 修改会报错
+        //PI = 1245;
+        console.log(PI)
+        //var或造成变量穿透
+        for(let i=0;i<5;i++){
+            console.log(i);
+        };
+        //console.log("===这里就是变量穿透===>" + i)
+
+        //微信小程序、uniapp可以放心用let+const;
+        //一些web的开发还是要用var ,因为有些还用很低版本的浏览器
+   </script>
+</body>
+</html>

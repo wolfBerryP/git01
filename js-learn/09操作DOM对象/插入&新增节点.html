@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入&新增节点</title>
+</head>
+<body>
+<p id="ins">WWW</p>
+<div id="list">
+    <p id="p1">AAA</p>
+    <p id="p2">SSS</p>
+    <p id="p3">DDD</p>
+</div>
+<script type="text/javascript">
+    let ins = document.getElementById('ins');
+    let p2 = document.getElementById('p2');
+    let list = document.getElementById('list');
+    //1.追加一个子节点，本该出现在上方的WWW出现在了list最底部
+    // list.appendChild(ins);
+
+    //2.插入元素到XX元素之前
+    list.insertBefore(ins ,p2 );
+
+    //3.创建一个新的标签
+    let newP = document.createElement('p');
+    newP.id='p4';
+    newP.innerText = 'FFF';
+    list.appendChild(newP);
+
+    let style = document.createElement('style');
+    //4.setAttribute设置任意值
+    style.setAttribute('type','text/css');
+    style.innerHTML='body{color:red;}';
+    let head =document.getElementsByTagName('head');
+    head[0].appendChild(style);
+</script>
+</body>
+</html>

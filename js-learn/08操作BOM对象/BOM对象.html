@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器对象模型BOM</title>
+</head>
+<body>
+<script>
+  //1.window
+  console.log('---window对象---');
+  window.alert('alert')
+  console.log(window.innerHeight);
+  console.log(window.innerWidth);
+  console.log(window.outerHeight);
+  console.log(window.outerWidth);
+  //2.Navigator 浏览器信息 一般不用，因可以认为修改有安全隐患
+  console.log('---Navigator对象---');
+  console.log(navigator.appName);
+  console.log(navigator.appVersion);
+  console.log(navigator.userAgent);
+  console.log(navigator.platform);  //操作系统
+  //3.screen
+  console.log('---screen对象---');
+  console.log(screen.width);
+  console.log(screen.height);
+  //4.location
+  console.log('---location对象---');
+  console.log(location.host);
+  console.log(location.href);
+  // location.reload();
+  // location.assign("https://www.baidu.com");
+  console.log(location.protocol);
+  //5.document
+  console.log('---document对象---');
+  console.log(document.title);
+  console.log(document.cookie);
+  //6.history
+  console.log('---history对象---');
+  // history.back();
+  // history.forward();
+</script>
+</body>
+</html>
