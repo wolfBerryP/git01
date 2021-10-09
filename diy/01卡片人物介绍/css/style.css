@@ -114,6 +114,7 @@ body{
 }
 
 /* 点击放大 */
+/* 把lable设置为和卡片大小相同，并提升至最外层，点击卡片就会触发复选框 */
 #select_lable{
     display: block;
     position:absolute;

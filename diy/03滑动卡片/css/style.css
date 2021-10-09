@@ -1,0 +1,203 @@
+*
+{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif; /*无衬线字体*/
+}
+section
+{
+   position: relative;
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* background: #2196f3; */
+   background: rgba(0, 0, 0, 0.247);
+   overflow: hidden;
+}
+.swiper
+{
+   width: 100%;
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+.swiper-slide
+{
+   background-position: center;
+   background-size: cover; 
+   width: 400px;
+   background:#ffffff;
+   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+   filter: blur(4px);
+}
+/* 该框被激活时,将模糊度清零 */
+.swiper-slide-active
+{
+   filter: blur(0);
+}
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right 
+{
+   background-image: none;
+}
+
+/* 卡片人物介绍效果 */
+.inner-card
+{
+   height: 100vh;
+   background-color: #dcdde1;
+   display:flex;
+   justify-content: center;   
+   align-items: center;
+   flex-direction: column;
+   overflow-x: hidden;
+}
+input[type="checkbox"]
+{
+   display: none;
+}
+.card
+{
+   width: 400px;
+   height: 600px;
+   background-color: #ffffff;
+   box-shadow: 0 0 50px 10px rgba(0, 0, 0, .3);
+   transition:all .6s;
+   text-align:center;
+}
+.img
+{
+   width:400px;
+   height:230px;
+   background:url(../images/乾.png);    
+   background-size:cover;
+   transition: all .6s;
+}
+.title
+{
+   font-size: 30px;
+   color: rgba(88, 88, 88); /* rgba颜色取值范围0-255*/
+   margin:30px 0 15px 0;
+   transition: all .6s;
+   transition-delay: .2s;
+}
+.desc
+{
+   width: 400px;
+   margin-bottom: 20px;
+   padding: 0 30px;
+   line-height: 25px;
+   opacity: 1;
+   color: rgb(170, 170, 170);
+}
+.content
+{
+   display: none;
+   height:2500px;
+   text-align: center;
+   padding: 0 20%;
+   line-height: 40px;
+   background-color: #ffffff;
+}
+.content p
+{
+   margin: 30px 0 ;
+   text-align: left;
+   /* table	此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。 */
+   display: table;
+   justify-content: center;
+}
+.icon
+{
+   width:300px;
+   font-size:22px;
+   margin:2px auto;
+   display:flex;
+   justify-content: center;
+}
+.icon i
+{
+   margin: 10px;
+   font-size: 22px;
+   color: rgb(75, 75, 75);
+}
+
+/* 点击放大 */
+/* 把lable设置为和卡片大小相同，并提升至最外层，点击卡片就会触发复选框 */
+#select_lable
+{
+   display: block;
+   position:absolute;
+   width:400px;
+   height:600px;
+   z-index: 999;
+}
+input[type="checkbox"]:checked~.card #select_lable
+{
+   width:800px;
+   height:3000px;
+}
+input[type="checkbox"]:checked~.card
+{
+   width:800px;
+   height:3000px;
+}
+input[type="checkbox"]:checked~.card .img
+{
+   width:800px;
+   height:400px;
+   overflow: hidden;
+} 
+input[type="checkbox"]:checked~.card .title
+{
+   /* 
+       平移
+       translate 是同时设置  translateX  和 translateY，
+        所以里面可以填两个参数， 第一个值 X  第二个 Y
+    */
+   animation: title 2s;
+   color: #ffffff;
+   font-size: 30px;
+}
+input[type="checkbox"]:checked~.card .desc
+{
+   display:none;
+   opacity: 0;
+}
+input[type="checkbox"]:checked~.card .icon
+{
+   display:none;
+}
+input[type="checkbox"]:checked~.card .content
+{
+   display: block;
+   animation: content 2s;
+   transform: translateY(-50px);
+   overflow: hidden;
+}
+
+@keyframes content
+{
+   from{
+       opacity: 0;
+       transform: translateY(0px);
+   }
+   to{
+       opacity: 1;
+       transform: translateY(-50px);
+   }
+}
+
+@keyframes title
+{
+   from{
+       opacity: 1;
+       transform: translate(0px);
+   }
+   to{
+       opacity: 0;
+       transform: translate(-400px);
+   }
+}
