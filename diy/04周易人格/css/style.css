@@ -140,13 +140,13 @@ input[type="checkbox"]
 input[type="checkbox"]:checked~.card .select_lable
 {
    width:800px;
-   height:3000px;
+   height:5000px;
    box-shadow: 0 0 10px 10px rgba(229, 255, 0, 0.719);
 }
 input[type="checkbox"]:checked~.card
 {
    width:800px;
-   height:3000px;
+   height:5000px;
 }
 input[type="checkbox"]:checked~.card .img
 {
@@ -157,9 +157,9 @@ input[type="checkbox"]:checked~.card .img
 input[type="checkbox"]:checked~.card .title
 {
    /* 
-       平移
-       translate 是同时设置  translateX  和 translateY，
-        所以里面可以填两个参数， 第一个值 X  第二个 Y
+      平移
+         translate 是同时设置  translateX  和 translateY，
+         所以里面可以填两个参数， 第一个值 X  第二个 Y
     */
    animation: title 2s;
    color: #ffffff;
@@ -179,30 +179,30 @@ input[type="checkbox"]:checked~.card .content
    display: block;
    animation: content 2s;
    transform: translateY(-50px);
-   overflow: hidden;
+   /* overflow: hidden; */
 }
 
 @keyframes content
 {
    from{
-       opacity: 0;
-       transform: translateY(0px);
+      opacity: 0;
+      transform: translateY(0px);
    }
    to{
-       opacity: 1;
-       transform: translateY(-50px);
+      opacity: 1;
+      transform: translateY(-50px);
    }
 }
 
 @keyframes title
 {
    from{
-       opacity: 1;
-       transform: translate(0px);
+      opacity: 1;
+      transform: translate(0px);
    }
    to{
-       opacity: 0;
-       transform: translate(-400px);
+      opacity: 0;
+      transform: translate(-400px);
    }
 }
 
