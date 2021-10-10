@@ -14,7 +14,7 @@ section
    justify-content: center;
    align-items: center;
    /* background: #2196f3; */
-   background: rgba(0, 0, 0, 0.247);
+   background: #000000;
    overflow: hidden;
 }
 .swiper
@@ -29,13 +29,16 @@ section
    background-size: cover; 
    width: 400px;
    background:#ffffff;
-   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+   /* box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); */
+   /* box-shadow: 0 0 10px 10px rgba(229, 255, 0, 0.719); */
+   box-shadow: 0 0 14px 7px #ffffff;
    filter: blur(4px);
 }
 /* 该框被激活时,将模糊度清零 */
 .swiper-slide-active
 {
    filter: blur(0);
+   box-shadow: 0 0 10px 10px rgba(229, 255, 0, 0.719);
 }
 .swiper-3d .swiper-slide-shadow-left,
 .swiper-3d .swiper-slide-shadow-right 
@@ -126,7 +129,7 @@ input[type="checkbox"]
 
 /* 点击放大 */
 /* 把lable设置为和卡片大小相同，并提升至最外层，点击卡片就会触发复选框 */
-#select_lable
+.select_lable
 {
    display: block;
    position:absolute;
@@ -134,10 +137,11 @@ input[type="checkbox"]
    height:600px;
    z-index: 999;
 }
-input[type="checkbox"]:checked~.card #select_lable
+input[type="checkbox"]:checked~.card .select_lable
 {
    width:800px;
    height:3000px;
+   box-shadow: 0 0 10px 10px rgba(229, 255, 0, 0.719);
 }
 input[type="checkbox"]:checked~.card
 {
@@ -200,4 +204,20 @@ input[type="checkbox"]:checked~.card .content
        opacity: 0;
        transform: translate(-400px);
    }
+}
+
+.content-title{
+   text-align: center;
+   font-family: 华文行楷;
+   font-size: 50px;
+   margin-top: 40px;
+   padding: 5px;
+}
+
+.content >p{
+   text-align: left;
+   font-size: 18px;
+   line-height: 25px;
+   padding: 10px;
+   
 }
