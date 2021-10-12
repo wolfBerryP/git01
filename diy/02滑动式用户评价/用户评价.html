@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./css/style.css">  自定义的style必须放在swiper-css的后面，否则swiper不生效-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/> 
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <section>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./images/quote.jpg" class="quote" alt="">
+            <div class="content">
+              <p>
+                把天上的星象同人间世事的吉凶联系起来，对此作出带有某种神秘色彩的解释，并且进一步把天象看作神的意志的体现，对天顶礼膜拜，这是中国古人的思维习惯。那时没有天文望远镜，没有相关的科学知识(在西方，这方面的知识和技术到16、17世纪才有较大发展)，按古人的思维习惯，绝不可能把顶礼膜拜的对象当作认识、研究和探索的对象。
+              </p>
+              <p>把天上的星象同人间世事的吉凶联系起来，对此作出带有某种神秘色彩的解释，并且进一步把天象看作神的意志的体现，对天顶礼膜拜，这是中国古人的思维习惯。那时没有天文望远镜，没有相关的科学知识(在西方，这方面的知识和技术到16、17世纪才有较大发展)，按古人的思维习惯，绝不可能把顶礼膜拜的对象当作认识、研究和探索的对象。</p>
+              <div class="details">
+                <div class=imgBx>
+                  <img src="./images/user3.jpg" alt="">
+                </div>
+                <h3>Someone Famous<br><span>Creative Designer</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./images/quote.jpg" class="quote" alt="">
+            <div class="content">
+              <p>
+                把天上的星象同人间世事的吉凶联系起来，对此作出带有某种神秘色彩的解释，并且进一步把天象看作神的意志的体现，对天顶礼膜拜，这是中国古人的思维习惯。那时没有天文望远镜，没有相关的科学知识(在西方，这方面的知识和技术到16、17世纪才有较大发展)，按古人的思维习惯，绝不可能把顶礼膜拜的对象当作认识、研究和探索的对象。</p>
+                <p>把天上的星象同人间世事的吉凶联系起来，对此作出带有某种神秘色彩的解释，并且进一步把天象看作神的意志的体现，对天顶礼膜拜，这是中国古人的思维习惯。那时没有天文望远镜，没有相关的科学知识(在西方，这方面的知识和技术到16、17世纪才有较大发展)，按古人的思维习惯，绝不可能把顶礼膜拜的对象当作认识、研究和探索的对象。</p>
+                <div class="details">
+                <div class=imgBx>
+                  <img src="./images/user2.jpg" alt="">
+                </div>
+                <h3>Someone Famous<br><span>Creative Designer</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="testimonialBox">
+            <img src="./images/quote.jpg" class="quote" alt="">
+            <div class="content">
+              <p>把天上的星象同人间世事的吉凶联系起来，对此作出带有某种神秘色彩的解释，并且进一步把天象看作神的意志的体现，对天顶礼膜拜，这是中国古人的思维习惯。那时没有天文望远镜，没有相关的科学知识(在西方，这方面的知识和技术到16、17世纪才有较大发展)，按古人的思维习惯，绝不可能把顶礼膜拜的对象当作认识、研究和探索的对象。</p>
+              <p>把天上的星象同人间世事的吉凶联系起来，对此作出带有某种神秘色彩的解释，并且进一步把天象看作神的意志的体现，对天顶礼膜拜，这是中国古人的思维习惯。那时没有天文望远镜，没有相关的科学知识(在西方，这方面的知识和技术到16、17世纪才有较大发展)，按古人的思维习惯，绝不可能把顶礼膜拜的对象当作认识、研究和探索的对象。</p>
+              <div class="details">
+                <div class=imgBx>
+                  <img src="./images/user1.jpg" alt="">
+                </div>
+                <h3>Someone Famous<br><span>Creative Designer</span></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2,
+        slideShadows: true,
+      },
+      loop:true
+    });
+  </script>
+
+
+</body>
+</html>
