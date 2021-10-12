@@ -70,13 +70,30 @@ input[type="checkbox"]
    transition:all .6s;
    text-align:center;
 }
+/* .img{
+   background-size: cover;
+   transition: all .6s;
+} */
 .img
 {
    width:400px;
    height:230px;
-   background:url(../images/乾.png);    
+   /* background:url(../images/无妄.png);*/
    background-size:cover;
    transition: all .6s;
+   /* .hero中的文字左对齐，在其父元素中设置 */
+   text-align: left;
+}
+.hero{
+   display: none;
+   font-size: 50px;
+   color: #ffffff; 
+   /* letter-spacing: 351px;  350为临界点，该值设定文字间的间距*/
+   letter-spacing: 600px;
+}
+/* 鼠标悬停显示人物名字 */
+.card:hover>.img .hero{
+   display: block;
 }
 .title
 {
