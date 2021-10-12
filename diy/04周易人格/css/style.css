@@ -64,7 +64,7 @@ input[type="checkbox"]
 .card
 {
    width: 400px;
-   height: 600px;
+   height: 620px;
    background-color: #ffffff;
    box-shadow: 0 0 50px 10px rgba(0, 0, 0, .3);
    transition:all .6s;
@@ -90,6 +90,8 @@ input[type="checkbox"]
    color: #ffffff; 
    /* letter-spacing: 351px;  350为临界点，该值设定文字间的间距*/
    letter-spacing: 600px;
+   font-family: 楷体;
+   padding: 10px;
 }
 /* 鼠标悬停显示人物名字 */
 .card:hover>.img .hero{
